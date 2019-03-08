@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-md-12">
+    <button class="btn btn-primary btn-sm pull-right" routerLink="/create-account">
+      Add Account
+    </button><br><br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>AccountId</td>
+          <td>NAME</td>
+          <td>Balance</td>
+          <td>Total Point</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of Account">
+          <td>{{item.AccountId}}</td>
+          <td>{{item.Name}}</td>
+          <td>{{item.Balance}}</td>
+          <td>{{item.TotalPoint}}</td>
+
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

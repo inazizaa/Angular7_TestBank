@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="col-md-10">
+    <h3>CREATE DATA TRANSACTION</h3>
+
+    <form [formGroup]="form">
+
+      <div class="form-group row">
+        <label for="AccountId" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+        <div class="col-sm-10">
+          <select formControlName="AccountId" class="form-control form-control-sm">
+            <option value="">Choose Name</option>
+            <option *ngFor="let item of accounts" value="{{item.AccountId}}">{{item.Name}}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <label for="TransactionDate" class="col-sm-2 col-form-label col-form-label-sm">Transaction Date</label>
+        <div class="col-sm-10">
+          <input type="date" formControlName="TransactionDate" class="form-control form-control-sm"
+            id="TransactionDate">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="TransactionDate" class="col-sm-2 col-form-label col-form-label-sm">Description</label>
+        <div class="col-sm-10">
+          <select formControlName="Description" class="form-control form-control-sm">
+            <option>Setor Tunai</option>
+            <option>Tarik Tunai</option>
+            <option>Beli Pulsa</option>
+            <option>Bayar Listrik</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Amount" class="col-sm-2 col-form-label col-form-label-sm">Amount</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="Amount" class="form-control form-control-sm" id="Amount">
+        </div>
+      </div>
+      <button class="btn btn-info btn-sm  " style="margin-right: 5px" (click)="submit()" type="submit"
+        [disabled]="!form.valid"><i class="fa fa-save"></i> Submit</button>
+      <button class="btn btn-danger btn-sm" (click)="cancel()"><i class="fa fa-save"></i> Batal</button>
+
+    </form>
+  </div>
+
+</div>
